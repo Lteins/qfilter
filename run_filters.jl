@@ -9,9 +9,9 @@ log_file = open("run_filters.log", "a")
 # for name in ARGS
     # target_label = parse(Int, split(name, "-")[3][end:end])
 name = "test"
-reps = npzread("ones")'
+reps = npzread("/content/gdrive/My Drive/Resnet/ones")'
 n = size(reps)[2]
-polluted_mark = npzread("mark")
+polluted_mark = npzread("/content/gdrive/My Drive/Resnet/mark")
 eps = sum(polluted_mark)
 removed = round(Int, 1.5*eps)
 
