@@ -27,7 +27,7 @@ function rcov_auto_quantum_filter(polluted_mark, reps, eps, α=0, τ=0.1; limit1
     reps_pca, U = pca(reps, 5)
     best_opnorm, best_selected, best_k = -Inf, nothing, nothing
     pr = 0
-    for k in round.(Int, range(1, sqrt(5), length=20) .^ 2)
+    for k in round.(Int, range(1, sqrt(20), length=10) .^ 2)
         selected = rcov_quantum_filter(reps, eps, k, α, τ; limit1=limit1, limit2=limit2)
         Σ = cov(reps_pca[:, selected]')
         Σ′ = cov((Σ^(-1/2)*reps_pca)')
