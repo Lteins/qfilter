@@ -1,5 +1,5 @@
 include("dkk17.jl")
-
+using NPZ
 function rcov_quantum_filter(reps, eps, k, α=4, τ=0.1; limit1=2, limit2=1.5)
     d, n = size(reps)
     reps_pca, U = pca(reps, k)
