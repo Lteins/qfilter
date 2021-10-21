@@ -8,8 +8,9 @@ function rcov_quantum_filter(reps, eps, k, α=4, τ=0.1; limit1=2, limit2=1.5)
         Σ′ = ones(1, 1)
     else
         selected = cov_estimation_iterate(reps_pca, eps/n, τ, nothing, limit=round(Int, limit1*eps))
+        npzwrite("/content/gdrive/My Drive/Resnet/tuning/cov_selected.npy", selected)
         reps_pca_selected = reps_pca[:, selected]
-        npzwrite("/content/gdrive/My Drive/Resnet/tuning/cov_selected.npy", reps_pca_selected)
+        
         Σ = cov(reps_pca_selected', corrected=false)
         reps_estimated_white = Σ^(-1/2)*reps_pca
         Σ′ = cov(reps_estimated_white')
