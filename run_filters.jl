@@ -41,7 +41,9 @@ for i in 1:n
     if polluted_mark[i] && quantum_poison_ind[i]
         global pr += 1
     end
-end    
+end
+
+npzwrite("/content/gdrive/My Drive/Resnet/Cheat/Retrain/select.np", selected)
 clean_removed = removed - pr
 @show pr, clean_removed, eps
 # end

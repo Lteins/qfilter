@@ -8,7 +8,7 @@ function rcov_quantum_filter(reps, eps, k, α=4, τ=0.1; limit1=2, limit2=1.5)
         Σ′ = ones(1, 1)
     else
         selected = cov_estimation_iterate(reps_pca, eps/n, τ, nothing, limit=round(Int, limit1*eps))
-        npzwrite("/content/cov_selected.npy", selected)
+        # npzwrite("/content/cov_selected.npy", selected)
         reps_pca_selected = reps_pca[:, selected]
         
         Σ = cov(reps_pca_selected', corrected=false)
