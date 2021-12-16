@@ -19,7 +19,7 @@ function rcov_quantum_filter(reps, eps, k, α=4, τ=0.1; limit1=2, limit2=1.5)
     M /= tr(M)
     estimated_poison_ind = k_lowest_ind(
         -[x'M*x for x in eachcol(reps_estimated_white)],
-        round(Int, limit2*eps)
+        round(Int, limit2*3424)
     )
     return .! estimated_poison_ind
 end
