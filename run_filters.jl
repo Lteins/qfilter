@@ -13,7 +13,8 @@ reps = npzread("/content/gdrive/My Drive/Resnet/Cheat/ones(v2).np")'
 n = size(reps)[2]
 polluted_mark = npzread("/content/gdrive/My Drive/Resnet/Cheat/mark(v2).np")
 eps = sum(polluted_mark)
-removed = round(Int, 1.5*eps)
+# removed = round(Int, 1.5*eps)
+removed = round(Int, 1.5*2270)
 
     # @printf("%s: Running PCA filter\n", name)
     # reps_pca, U = pca(reps, 1)
