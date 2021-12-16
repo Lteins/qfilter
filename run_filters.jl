@@ -45,7 +45,7 @@ for i in 1:n
     quantum_poison_ind[i] = !quantum_poison_ind[i]
 end
 
-# # npzwrite("/content/gdrive/My Drive/Resnet/Cheat/Retrain/select(v2).np", quantum_poison_ind)
+npzwrite("/content/gdrive/My Drive/Resnet/Cheat/Retrain/select(v2).np", quantum_poison_ind)
 clean_removed = removed - pr
 @show pr, clean_removed, eps
 # end
