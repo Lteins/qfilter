@@ -9,9 +9,9 @@ log_file = open("run_filters.log", "a")
 # for name in ARGS
     # target_label = parse(Int, split(name, "-")[3][end:end])
 name = "test"
-reps = npzread("/content/gdrive/My Drive/Resnet/Cheat/ones(v2).np")'
+reps = npzread("/content/gdrive/My Drive/Resnet/Cheat/ones(v3).np")'
 n = size(reps)[2]
-polluted_mark = npzread("/content/gdrive/My Drive/Resnet/Cheat/mark(v2).np")
+polluted_mark = npzread("/content/gdrive/My Drive/Resnet/Cheat/mark(v3).np")
 eps = sum(polluted_mark)
 # removed = round(Int, 1.5*eps)
 removed = round(Int, 1.5*3424)
@@ -45,7 +45,7 @@ for i in 1:n
     quantum_poison_ind[i] = !quantum_poison_ind[i]
 end
 
-npzwrite("/content/gdrive/My Drive/Resnet/Cheat/Retrain/select(v2).np", quantum_poison_ind)
+# npzwrite("/content/gdrive/My Drive/Resnet/Cheat/Retrain/select(v2).np", quantum_poison_ind)
 clean_removed = removed - pr
 @show pr, clean_removed, eps
 # end
